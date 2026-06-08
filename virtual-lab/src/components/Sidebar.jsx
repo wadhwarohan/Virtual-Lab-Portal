@@ -24,13 +24,9 @@ const Sidebar =()=>{
         role==="ADMIN" ?
         {name:"Employees",href:'/employees',icon:UserIcon}:
         {name:"Attendence",href:'/attendence',icon:CalendarIcon},
-        {name:"Leave",href:'/leave',icon:FileTextIcon},
+        {name:"Apply Leave",href:'/leave',icon:FileTextIcon},
         {name:"Settings",href:'/settings',icon:SettingsIcon},
     ]
-
-    const handleLogout=()=>{
-        window.location.href='/login'
-    }
 
     const sidebarContent = (
         <>
@@ -51,27 +47,8 @@ const Sidebar =()=>{
 
             </div>
 
-            {/* user profile card */}
-            {userName && (
-                <div className='mx-3 mt-4 mb-1 p-3 rounded-lg bg-white/3 border border-white/4'>
-                    <div className='flex items-center gap-3'>
-                        <div className='w-11 h-11 rounded-lg bg-slate-800 flex items-center justify-center ring-1 ring-white/10 shrink-0'>
-                            <span>
-                                {userName.charAt(0).toUpperCase()}
-                            </span>
-                        </div>
-                        <div className='min-w-0'>
-                            <p className='text-[15px] font-medium text-slate-200 truncate'>{userName}</p>
-                            <p className='text-[13px] text-slate-500 truncate'>{role === "ADMIN" ? "Administrator" : "Project Staff"}</p>
-                        </div>
-
-                    </div>
-                </div>
-            )}
-
-
             {/* section label */}
-            <div className='px-5 pt-7 pb-2'>
+            <div className='px-5 pt-20 pb-2'>
                 <p className='text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-500'>Navigation</p>
             </div>
 
@@ -92,13 +69,7 @@ const Sidebar =()=>{
                 })}
             </div>
 
-            {/* Logout */}
-            <div className='p-3 border-t border-white/6'>
-                <button onClick={handleLogout} className='flex items-center gap-3 wifull px-3 py-2.5 rounded-md text-[13px] font-medium text-slate-400 hover:text-rose-400 hover:bg-rose-500/8 transition-all duration-150'>
-                    <LogOutIcon className='w-[17px] h-[17px]'/>
-                    <span >Log Out</span>
-                </button>
-            </div>
+            
         </>
     )
 

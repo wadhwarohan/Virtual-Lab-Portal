@@ -325,3 +325,4 @@ export function getDayTypeDisplay(record) {
     }
     return { label: "—", className: "" };
 }
+
