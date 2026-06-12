@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { LogOutIcon,LayoutGridIcon, CalendarIcon, FileTextIcon, SettingsIcon, UserIcon } from "lucide-react";
+import { LogOutIcon,LayoutGridIcon, ClipboardListIcon, FileTextIcon, SettingsIcon, UserIcon } from "lucide-react";
 import { dummyProfileData } from "../assets/assets";
 
 // Maps route paths to readable page titles
 const PAGE_META = {
   '/dashboard':  { title: 'Dashboard',  icon: LayoutGridIcon },
-  '/attendence': { title: 'Attendance', icon: CalendarIcon },
+  '/leavehistory': { title: 'Leave History', icon: ClipboardListIcon },
   '/leave':      { title: 'Apply Leave',      icon: FileTextIcon },
   '/employees':  { title: 'Employees',  icon: UserIcon },
   '/settings':   { title: 'Settings',   icon: SettingsIcon },
@@ -46,7 +46,7 @@ const Topbar = () => {
   {/* Center — user card (absolutely centered) */}
   {userName && (
     
-    <div className='absolute left-1/2 -translate-x-1/2 flex items-center gap-2 px-10 py-2 rounded-lg bg-white/5 border border-white/10'>
+    <div className='hidden lg:flex absolute left-1/2 -translate-x-1/2 flex ml-120 gap-2 px-10 py-2 rounded-lg bg-white/5 border border-white/10'>
       <div className='w-10 h-10 rounded-md bg-slate-900 flex items-center justify-center ring-1 ring-white/10 shrink-0 mr-5'>
         <span className='text-white text-[11px] font-semibold'>
           {userName.charAt(0).toUpperCase()}

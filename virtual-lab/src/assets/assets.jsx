@@ -124,7 +124,7 @@ export const dummyLeaveData = [
     {
         _id: "69b4165af8a807df391d7bfd",
         employeeId: "69b41439f8a807df391d7b52",
-        type: "ANNUAL",
+        type: "PERSONAL",
         startDate: "2026-03-27T00:00:00.000Z",
         endDate: "2026-03-29T00:00:00.000Z",
         reason: "Out for a trip",

@@ -5,7 +5,7 @@ import LoginLanding from './pages/LoginLanding';
 import Dashboard from './pages/Dashboard';
 import Layout from './pages/Layout';
 import Employees from './pages/Employees';
-import Attendence from './pages/Attendence';
+import LeaveHistory from './pages/LeaveHistory';
 import Leave from './pages/Leave';
 import Setting from './pages/Settings';
 import LoginForm from './components/LoginForm';
@@ -23,7 +23,7 @@ const App = () => {
             <Route element={<Layout />}>
               <Route path='/dashboard' element={<Dashboard />} />
               <Route path='/employees' element={<Employees />} />
-              <Route path='/attendence' element={<Attendence />} />
+              <Route path='/leavehistory' element={<LeaveHistory />} />
               <Route path='/leave' element={<Leave />} />
               <Route path='/settings' element={<Setting />} />
             </Route>

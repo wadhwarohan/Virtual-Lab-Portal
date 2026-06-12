@@ -1,7 +1,7 @@
 import { useLocation,Link } from "react-router-dom";
 import {dummyProfileData} from "../assets/assets";
 import {useEffect,useState} from "react";
-import {MenuIcon, SettingsIcon,  XIcon,LayoutGridIcon,UserIcon,CalendarIcon,FileTextIcon, ChevronRightIcon, LogOutIcon} from 'lucide-react';
+import {MenuIcon, SettingsIcon,  XIcon,LayoutGridIcon,UserIcon,ClipboardListIcon ,FileTextIcon, ChevronRightIcon, LogOutIcon} from 'lucide-react';
 
 const Sidebar =()=>{
 
@@ -21,10 +21,11 @@ const Sidebar =()=>{
     const role= ""|| "PROJECT STAFF";
     const navItems=[
         {name:"Dashboard",href:'/dashboard',icon:LayoutGridIcon},
+         {name:"Apply Leave",href:'/leave',icon:FileTextIcon},
         role==="ADMIN" ?
         {name:"Employees",href:'/employees',icon:UserIcon}:
-        {name:"Attendence",href:'/attendence',icon:CalendarIcon},
-        {name:"Apply Leave",href:'/leave',icon:FileTextIcon},
+        {name:"Leave History",href:'/leavehistory',icon:ClipboardListIcon },
+       
         {name:"Settings",href:'/settings',icon:SettingsIcon},
     ]
 
@@ -36,7 +37,7 @@ const Sidebar =()=>{
                     <div className='flex items-center gap-3'>
                         <UserIcon className='text-white size-7' />
                         <div>
-                        <p className='font-semibold text-[16px] text-white tracking-wide'>Virtual Lab <br />Portal</p>
+                        <p className='font-semibold text-[16px] text-white tracking-wide'>Virtual Lab , Leave <br />Portal</p>
                         </div>
                     </div>
                     <button onClick={()=>{setMobileOpen(false)}} 
@@ -55,7 +56,7 @@ const Sidebar =()=>{
             {/* Navigation List */}
             <div className='flex-1 px-3 space-y-0.5 overflow-y-auto'>
                 {navItems.map((item)=>{
-                    const isActive = pathname.startsWith(item.href)
+                    const isActive = pathname === item.href
                     return(
                         <Link key={item.name} to={item.href} className={`group flex items-center gap-3 px-3 py-2.5 rounded-md text-[13px] font-medium transition-all duration-150 relative ${isActive?'bg-indigo-500/12 text-indigo-300':'text-slate-300 hover:text-white hover:bg-white/4'}`}>
                          {isActive && <div className='absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-5 rounded-r-full bg-indigo-500'/>}
@@ -84,7 +85,7 @@ const Sidebar =()=>{
           {mobileOpen && <div className='lg:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40' onClick={()=>setMobileOpen(false)} />}
 
           {/* SideBar desktop */}
-            <aside className='hidden lg:flex flex-col h-full w-[290px] bg-slate-950 text-white shrink-0 border-r border-white/4'>
+            <aside className='hidden lg:flex flex-col h-full w-[350px] bg-slate-950 text-white shrink-0 border-r border-white/4'>
                 {sidebarContent}
             </aside>
 
