@@ -9,7 +9,7 @@ const LoginLeftSide = () => {
                 }
                 @keyframes pulse-ring {
                     0% { transform: scale(0.8); opacity: 0.6; }
-                    100% { transform: scale(2); opacity: 0; }
+                    50% { transform: scale(2); opacity: 0; }
                 }
                 @keyframes beam {
                     0% { transform: translateX(-300%) rotate(45deg); }
@@ -19,8 +19,8 @@ const LoginLeftSide = () => {
 
             {/* SVG background shapes */}
             <svg className="absolute inset-0 w-full h-full">
-                <circle cx="50%" cy="50%" r="300" fill="none" stroke="rgba(165,155,255,0.07)" strokeWidth="0.5"/>
-                <circle cx="50%" cy="50%" r="200" fill="none" stroke="rgba(165,155,255,0.05)" strokeWidth="0.5"/>
+                <circle cx="80%" cy="50%" r="800" fill="none" stroke="rgba(92, 81, 81, 0.07)" strokeWidth="0.5"/>
+                <circle cx="80%" cy="50%" r="900" fill="none" stroke="hsl(74, 54%, 40%)" strokeWidth="0.5"/>
             </svg>
 
             {/* Twinkling stars */}
@@ -29,8 +29,8 @@ const LoginLeftSide = () => {
                     key={i}
                     className="absolute rounded-full bg-white"
                     style={{
-                        width: `${Math.random() * 3 + 2}px`,
-                        height: `${Math.random() * 3 + 2}px`,
+                        width: `${Math.random() * 10 + 10}px`,
+                        height: `${Math.random() * 15 + 10}px`,
                         top: `${Math.random() * 100}%`,
                         left: `${Math.random() * 100}%`,
                         animation: `twinkle ${Math.random() * 2 + 1.5}s ${Math.random() * 4}s infinite ease-in-out`,
