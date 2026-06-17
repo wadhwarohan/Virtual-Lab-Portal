@@ -42,7 +42,7 @@ export const createEmployees = async (req,res)=>{
         const hashed = await bcrypt.hash(password,10)
         const user = await User.create({
             email,
-            passwrod:hashed,
+            password:hashed,
             role:role || "EMPLOYEE"
         })
 

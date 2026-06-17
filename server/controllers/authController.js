@@ -26,9 +26,9 @@ export const login = async(req,res) =>{
             return res.status(401).json({error:"Invalid credentials.."})
         
         const payload={
-            userId:user_id.toString(),
-            role = user.role,
-            email = user.email,
+            userId:user._id.toString(),
+            role : user.role,
+            email : user.email,
         }
 
         const token = jwt.sign(payload,process.env.JWT_SECRET,{expiresIn :"7d"})
