@@ -4,7 +4,7 @@
 //GET /api/dashboard
 
 import Employee from "../models/Employee.js";
-import LeaveApplication from "../models/LeaveApplication";
+import LeaveApplication from "../models/LeaveApplication.js";
 
 export const getDashboard = async (req,res) =>{
     try {

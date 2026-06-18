@@ -1,6 +1,6 @@
 import {Router} from 'express';
 import { protect, protectAdmin } from '../middleware/auth.js';
-import { createLeave, getLeave, updateLeaveStatus } from '../controllers/leaveController';
+import { createLeave, getLeave, updateLeaveStatus } from '../controllers/leaveController.js';
 
 const leaveRouter = Router();
 

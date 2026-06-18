@@ -1,7 +1,7 @@
 //create leave
 
 import Employee from "../models/Employee.js";
-import LeaveApplication from "../models/LeaveApplication";
+import LeaveApplication from "../models/LeaveApplication.js";
 
 //post /api/leaves
 export const createLeave = async(req,res)=>{
@@ -16,18 +16,18 @@ export const createLeave = async(req,res)=>{
         }
 
         const {type,startDate,endDate,reason} = req.body;
-        if(!type || !startDate ||endDate ||!reason){
+        if(!type || !startDate ||!endDate ||!reason){
               return res.status(400).json({error:"Missing fields"})
         }
 
         const today = new Date();
         today.setHours(0,0,0,0);
         if(new Date(startDate) <= today || new Date(endDate) <= today){
-            return res.status(400).josn({error:"Leave dates must be in future..."})
+            return res.status(400).json({error:"Leave dates must be in future..."})
         }
 
         if(new Date(endDate) < new Date(startDate)){
-            return res.status(400).josn({error:"End  date cannot be before start date"})
+            return res.status(400).json({error:"End  date cannot be before start date"})
         }
 
         const leave = await LeaveApplication.create({
@@ -54,7 +54,7 @@ export const getLeave = async(req,res)=>{
         const session = req.session;
         const isAdmin = session.role==="ADMIN";
         if(isAdmin){
-            const status = req.qury.status
+            const status = req.query.status
             const where =status?{status}:{};
             const leaves = (await LeaveApplication.find(where).populate("employeeId")).sort({createdAt:-1})
             const data = leaves.map((l)=>{
