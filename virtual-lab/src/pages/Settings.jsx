@@ -24,7 +24,7 @@ const Setting =()=>{
     if(loading) return <Loading />
 
     return(
-        <div classname='animate-fade-in'>
+        <div className='animate-fade-in'>
             <div className="page-header">
                 <h1 className="page-title">Settings</h1>
                 <p className="page-subtitle">Manage your account and preferences</p>
@@ -56,7 +56,7 @@ const Setting =()=>{
                 
                 <button
                 onClick={() => setShowPasswordModal(true)}
-                className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl ml-20 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-700 text-[12px] font-semibold transition-all duration-150 hover:shadow-sm shrink-0"
+                className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl ml-auto bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-700 text-[12px] font-semibold transition-all duration-150 hover:shadow-sm shrink-0"
                 >
                 <KeyRound className="w-3.5 h-3.5" />
                 Change

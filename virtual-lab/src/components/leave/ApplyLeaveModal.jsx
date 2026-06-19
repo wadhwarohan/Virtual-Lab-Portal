@@ -249,7 +249,7 @@ const ApplyLeaveModal = ({ open, onClose, onSuccess }) => {
 
          
 
-        </div>  {/* ← this closing div was MISSING — caused all 3 errors */}
+        </div>
 
         {/* Buttons */}
         <div className='flex gap-3 pt-1'>
